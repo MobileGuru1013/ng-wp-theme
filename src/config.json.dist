@@ -1,0 +1,10 @@
+{
+  "wpAPIBaseUrl": "http://{YOUR_DOMAIN_HERE}/wp-json/wp/v2/",
+  "wpThemeAPIBaseUrl": "http://{YOUR_DOMAIN_HERE}/wp-json/ng-theme/v1/",
+  "acfAPIBaseUrl": "http://{YOUR_DOMAIN_HERE}/wp-json/acf/v3/",
+  "pageTemplates": [
+    "Page404Component",
+    "ExampleTemplateComponent",
+    "ContactComponent"
+  ]
+}

@@ -1,0 +1,25 @@
+<form [hidden]="messageSent" (ngSubmit)="onSubmit()" #contactForm="ngForm">
+  <fieldset>
+    <legend>Contact form</legend>
+    <label>
+      Name: <input [(ngModel)]="model.name" name="name" type="text" required #name="ngModel">
+    </label><br>
+    <div [hidden]="name.valid || name.pristine" style="color: red">Name is required</div>
+    <label>
+      E-mail: <input [(ngModel)]="model.recipientEmail" name="recipientEmail" type="email" required #email="ngModel" email>
+    </label><br>
+    <div [hidden]="email.valid || email.pristine" style="color: red">E-mail is not valid</div>
+    <label>
+      Message: <textarea [(ngModel)]="model.message" name="message" required #message="ngModel"></textarea>
+    </label><br><br>
+    <div [hidden]="message.valid || message.pristine" style="color: red">Message is required</div>
+    <button type="submit" [disabled]="!contactForm.form.valid || processed">Submit</button>
+  </fieldset>
+</form>
+<p [hidden]="!processed">Sending...</p>
+<p [hidden]="!messageSent">Message sent!</p>
+<p [hidden]="!error">Message was not sent!</p>
+<p>data:</p>
+<pre>
+   {{ diagnostic }}
+</pre>

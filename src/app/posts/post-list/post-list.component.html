@@ -1,0 +1,11 @@
+--Component: post-list--
+<div *ngFor="let post of posts">
+  <a [href]="post.link">
+    <h3>{{ post.title.rendered }}</h3>
+  </a>
+  <div [innerHTML]="post.excerpt.rendered"></div>
+  <p>Author:
+    <span>{{ post._embedded.author[0].name }}</span>
+  </p>
+  <a [href]="post.link">Read more...</a>
+</div>
